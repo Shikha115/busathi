@@ -19,13 +19,13 @@ function Login() {
         <section className="login ptb-50">
           <div className="container">
             <div className="title-section text-center mb-4">
-              <h1 className="heading heading-decor mb-0">Login</h1>
+              <h2 className="title fw-bold mb-0">Login</h2>
             </div>
             <div className="row">
               <div className="col-12 col-md-10 col-lg-6 col-xxl-4 mx-auto">
                 <form action="/Account" className="row form">
                   <div className="col-12 mb-4">
-                    <label className="mb-2">EMAIL</label>
+                    <label className="mb-0">EMAIL</label>
                     <input
                       onChange={(e) => setEmail(e.target.value)}
                       value={email}
@@ -35,7 +35,7 @@ function Login() {
                     />
                   </div>
                   <div className="col-12 mb-4">
-                    <div className="d-flex align-items-center justify-content-between mb-2">
+                    <div className="d-flex align-items-center justify-content-between mb-0">
                       <label className="w-auto">PASSWORD</label>
                       <Link to="/ForgetPasword" className="text-muted btn p-0">
                         Forgot password?
@@ -47,7 +47,7 @@ function Login() {
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           type={type}
-                          className="border-0"
+                          className="border-0 w-100"
                           required
                         />
                         <div

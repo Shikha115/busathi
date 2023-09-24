@@ -93,9 +93,13 @@ function Index() {
       <section className="home-top secondary-bg pt-5 pb-65">
         <div className="container text-center">
           <div className="top-btns text-end">
-            <Link to='/login' className="btn btn-white btn-custom">Login</Link>
+            <Link to="/Login" className="btn btn-white btn-custom">
+              Login
+            </Link>
           </div>
-          <img src={images.logoWhite} alt="" className="main-logo" />
+          <Link to="/">
+            <img src={images.logoWhite} alt="" className="main-logo" />
+          </Link>
           <div className="text-center">
             <h1 className="title fw-bold my-4">
               India’s No. 1{" "}
@@ -183,9 +187,9 @@ function Index() {
                 <input type="date" className="form-control" />
               </div>
             </div>
-            <button className="btn btn-lg btn-primary btn-custom">
+            <Link to='/BusDetail' className="btn btn-lg btn-primary btn-custom">
               Search Buses
-            </button>
+            </Link>
           </form>
         </div>
       </section>
@@ -193,7 +197,7 @@ function Index() {
       {/* ==================================================================================== */}
 
       <section className="container">
-        <div className="all-bus-location pointer-event">
+        <div className="all-bus-location">
           <iframe
             src="https://www.google.com/maps/d/u/0/embed?mid=1ZU5kq3sBIOcPg6ECqn6SPMq97Ufg50A&ehbc=2E312F"
             width="100%"
@@ -213,10 +217,15 @@ function Index() {
                 <span className="primary">can you do</span>
               </h1>
               <p>
-                Busathi is India’s #1 bus transport technology company. Live
-                track your bus on the Busathi App and get digital bus tickets on
-                the Busathi Card. Your one stop solution for a convenient and
-                hass
+                Track my bus feature enables our on-the-go customers and their
+                families to keep track of the bus location. You can track your
+                bus on a map and use the information to plan your commute to the
+                boarding point and to get off at the right stop. Family members
+                and friends can also check the bus location to coordinate
+                pick-ups and rest assured about your safety. Bus operators use
+                this feature to share any delay in bus schedule and which are
+                instantly shared with you. A win- win for all, it’s the smarter
+                way to travel!
               </p>
               <form action="" className="mt-3">
                 <div className="form">
@@ -225,9 +234,12 @@ function Index() {
                     className="form-control"
                     placeholder="Track your bus"
                   />
-                  <button className="btn btn-primary btn-custom btn-sm">
+                  <Link
+                    to="/TrackYourBus"
+                    className="btn btn-primary btn-custom"
+                  >
                     Track
-                  </button>
+                  </Link>
                 </div>
               </form>
             </div>
@@ -311,7 +323,7 @@ function Index() {
         </div>
       </section>
       {/* ==================================================================================== */}
-      <section className="container">
+      <section className="container mb-65">
         <div className="google-download">
           <h1 className="title fw-bold mb-4">ENJOY THE APP!</h1>
           <div className="row">

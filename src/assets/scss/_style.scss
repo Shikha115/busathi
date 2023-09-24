@@ -1,10 +1,16 @@
+.header .main-logo {
+  object-fit: contain;
+  width: auto;
+  height: 80px;
+}
+
 .home-top {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
-  .title+h6 {
+  .title + h6 {
     line-height: 35px;
     font-size: 20px;
   }
@@ -19,34 +25,32 @@
 }
 
 ul.location-box {
-    box-shadow: 0px 0px 10px 0px #00000030;
-    border-radius: 20px;
-    position: absolute;
-    background: #fff;
-    z-index: 9999;
-    width: 100%;
-    left: 0;
-    margin-top: 1pc;
-    li.box-inner {
-        display: flex;
-        align-items: baseline;
-        gap: 10px;
-        padding: 10px;
-        border-bottom: 1px solid #00000020;
-    }
-    h6 {
-       font-size: 15px;
-       line-height: normal;
-    }
-    
-    p {
-       line-height: normal;
-       font-size: 12px;
-       text-align: left;
-    }
+  box-shadow: 0px 0px 10px 0px #00000030;
+  border-radius: 20px;
+  position: absolute;
+  background: #fff;
+  z-index: 9999;
+  width: 100%;
+  left: 0;
+  margin-top: 1pc;
+  li.box-inner {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #00000020;
+  }
+  h6 {
+    font-size: 15px;
+    line-height: normal;
+  }
+
+  p {
+    line-height: normal;
+    font-size: 12px;
+    text-align: left;
+  }
 }
-
-
 
 .bus-gif {
   position: absolute;
@@ -66,6 +70,18 @@ ul.location-box {
   top: -2pc;
   height: 500px;
   overflow: hidden;
+  iframe {
+    position: relative;
+    top: -3.8pc;
+  }
+}
+
+.track_bus {
+  .map {
+    height: 500px;
+    overflow: hidden;
+    margin: 1pc;
+  }
   iframe {
     position: relative;
     top: -3.8pc;
@@ -137,32 +153,118 @@ ul.location-box {
   }
 }
 
-
-.google-download{
-    background-image: url('../images/downloadBg.jpg');
-    background-size: cover;
-    border-radius: 20px;
-    padding: 2pc;
+.google-download {
+  background-image: url("../images/downloadBg.jpg");
+  background-size: cover;
+  border-radius: 20px;
+  padding: 2pc;
 }
 
 .login {
-    margin: 5pc 0;
-  
-    .form-control {
-      border-width: 1px !important;
-      line-height: 33px;
+  margin: 5pc 0;
+
+  .form-control {
+    border-width: 1px !important;
+    line-height: 33px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  label {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .btn {
+    &.text-muted {
       font-size: 15px;
+      border: 0;
     }
-  
-    .btn {
-      &.text-muted {
-        font-size: 15px;
-        border: 0;
-      }
-  
-      &.btn-primary {
-        line-height: 33px;
-        border-radius: 4px;
-      }
+
+    &.btn-primary {
+      line-height: 33px;
+      border-radius: 4px;
     }
   }
+}
+
+.bus-detail {
+  .box {
+    display: flex;
+    gap: 1pc;
+    border: 1px solid #00000020;
+    padding: 1pc;
+    &:not(:last-child) {
+      margin-bottom: 2pc;
+    }
+    & > img {
+      object-fit: contain;
+      width: auto;
+      height: 115px;
+      transform: scaleX(-1);
+    }
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1pc;
+      margin-bottom: 1pc;
+      flex-wrap: wrap;
+    }
+  }
+  .outer-box {
+    flex: 1;
+  }
+  .btns {
+    display: flex;
+    align-items: center;
+    gap: 1pc;
+  }
+}
+
+.bus-view-detail {
+  overflow: hidden;
+  .title{
+    position: relative;
+    z-index: 10;
+  }
+  .gif {
+    position: relative;
+    top: -4pc;
+    margin-bottom: -7pc;
+    overflow: hidden;
+    img {
+      height: 22pc;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+
+  ul.box-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 4;
+    border: 1px solid #00000020;
+    li {
+      border: 1px solid #00000020;
+      border-width: 0px 1px 1px 0px !important;
+      padding: 1pc;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    h6 {
+      font-size: 12px;
+    }
+
+    p {
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+}

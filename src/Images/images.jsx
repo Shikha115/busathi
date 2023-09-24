@@ -7,6 +7,8 @@ import EmergencyStop from "../assets/images/EmergencyStop.png";
 import scanner from "../assets/images/scanner.svg";
 import appStore from "../assets/images/appStore.svg";
 import playStore from "../assets/images/playStore.svg";
+import busTrack from "../assets/images/busTrack.png";
+import busGif from "../assets/images/bus.gif";
 
 export const images = {
   logo,
@@ -18,4 +20,6 @@ export const images = {
   logoWhite,
   playStore,
   whatElse,
+  busTrack,
+  busGif,
 };

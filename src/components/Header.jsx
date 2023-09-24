@@ -1,19 +1,24 @@
 import React from "react";
 import { images } from "../Images/images";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <header>
-      <section className="home-top secondary-bg pt-5 pb-65">
+
+      <section className="header secondary-bg py-2">
         <div className="container text-center">
-          <div className="d-flex align-items-center">
-            <div className="top-btns text-end">
-              <button className="btn btn-white btn-custom">Login</button>
-            </div>
+          <div className="d-flex align-items-center justify-content-between">
+            <Link to='/'>
             <img src={images.logoWhite} alt="" className="main-logo" />
+            </Link>
+            <div className="top-btns text-end">
+            <Link to='/Login' className="btn btn-white btn-custom">Login</Link>
+            </div>
           </div>
         </div>
       </section>
+
     </header>
   );
 }

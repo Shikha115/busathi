@@ -35,6 +35,10 @@ main {
   margin-top: 65px !important;
 }
 
+.mtb-65 {
+  margin-top: 65px !important;
+  margin-bottom: 65px !important;
+}
 .ptb-65 {
   padding-top: 65px !important;
   padding-bottom: 65px !important;
@@ -52,8 +56,8 @@ main {
   text-align: justify !important;
 }
 
-.fw-600{
-    font-weight: 600;
+.fw-600 {
+  font-weight: 600;
 }
 
 .btn {
@@ -98,6 +102,7 @@ main {
   &-secondary {
     background-color: $secondary;
     color: $white;
+    border: 0;
     &:hover {
       background-color: $secondary !important;
       color: $white !important;
@@ -164,6 +169,7 @@ button {
 }
 
 p {
+  font-size: 15px;
   &:last-child {
     margin-bottom: 0;
   }
@@ -213,6 +219,13 @@ h6 {
   font-size: 0.875rem;
   // padding: 7px 22px;
   border-radius: 0.2rem;
+}
+
+.btn-lg,
+.btn-sm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-icons {
@@ -268,7 +281,7 @@ h6 {
   cursor: pointer;
 }
 .pointer-event {
-    pointer-events: none;
+  pointer-events: none;
 }
 .overlay {
   position: relative;
@@ -426,5 +439,5 @@ input:focus-visible {
   }
 }
 label {
- margin-bottom: 5px;
+  margin-bottom: 5px;
 }
