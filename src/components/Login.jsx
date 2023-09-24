@@ -14,7 +14,7 @@ function Login() {
 
   return (
     <>
-    <Header />
+      <Header />
       <main>
         <section className="login ptb-50">
           <div className="container">
@@ -54,19 +54,24 @@ function Login() {
                           className="icon pointer px-3"
                           onClick={handlePassword}
                         >
-                          {showPassword ? <i className="fa-solid fa-eye"></i> : <i className="fa-solid fa-eye-slash"></i>}
+                          {showPassword ? (
+                            <i className="fa-solid fa-eye"></i>
+                          ) : (
+                            <i className="fa-solid fa-eye-slash"></i>
+                          )}
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="col-12 text-center pt-1">
-                    <button
-                    //   onClick={() => handleSubmit()}
+                    <Link
+                      to="/Dashboard"
+                      //   onClick={() => handleSubmit()}
                       type="button"
                       className="btn btn-hover btn-custom btn-primary w-100"
                     >
                       SIGN IN
-                    </button>
+                    </Link>
                     <div className="mt-3">
                       <Link to="/Register" className="text-muted btn p-0 fs-6">
                         Create account

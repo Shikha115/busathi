@@ -11,6 +11,9 @@ import ResetPassword from "./components/ResetPassword";
 import BusTrack from "./components/BusTrack";
 import BusDetail from "./components/BusDetail";
 import BusViewDetail from "./components/BusViewDetail";
+import Dashboard from "./components/Dashboard";
+import SafetyAlarm from "./components/SafetyAlarm";
+import EmergencyStop from "./components/EmergencyStop";
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
           <Route path="/TrackYourBus" exact element={<BusTrack />} />
           <Route path="/BusDetail" exact element={<BusDetail />} />
           <Route path="/BusViewDetail" exact element={<BusViewDetail />} />
+          <Route path="/Dashboard" exact element={<Dashboard />} />
+          <Route path="/SafetyAlarm" exact element={<SafetyAlarm />} />
+          <Route path="/EmergencyStop" exact element={<EmergencyStop />} />
         </Routes>
       </BrowserRouter>
       {/* <Footer /> */}

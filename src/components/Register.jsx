@@ -24,10 +24,10 @@ function Register() {
             <div className="title-section text-center mb-4">
               <h2 className="title fw-bold mb-0">Create Account</h2>
             </div>
-            <div className="btns my-4 d-flex align-items-center justify-content-center gap-4">
+            <div className="btns my-4 d-flex align-items-center justify-content-center gap-4 flex-wrap">
               <button className="btn btn-secondary btn-custom">RTO</button>
               <button className="btn btn-secondary btn-custom">
-                Bus mamager
+                Bus manager
               </button>
               <button className="btn btn-secondary btn-custom">
                 General user
@@ -101,12 +101,13 @@ function Register() {
                     </div>
                   </div>
                   <div className="col-12 text-center pt-1">
-                    <button
+                    <Link
+                      to="/"
                       type="button"
                       className="btn btn-hover btn-custom btn-primary w-100"
                     >
                       CREATE
-                    </button>
+                    </Link>
                     <div className="mt-3">
                       <Link to="/Login" className="text-muted btn p-0 fs-6">
                         Login to existing account

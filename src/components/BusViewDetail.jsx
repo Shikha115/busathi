@@ -22,7 +22,7 @@ function BusViewDetail() {
               </li>
               <li>
                 <h6>Bus Name</h6>
-                <p>Janakpuri</p>
+                <p>himachal</p>
               </li>
               <li>
                 <h6>Availability</h6>
@@ -42,7 +42,7 @@ function BusViewDetail() {
               </li>
               <li>
                 <h6>Nearest Stop</h6>
-                <p>Janakpuri stop</p>
+                <p>himachal stop</p>
               </li>
               <li>
                 <h6>Seats Availble</h6>
@@ -54,7 +54,7 @@ function BusViewDetail() {
               </li>
               <li>
                 <h6>To</h6>
-                <p>Janakpuri</p>
+                <p>himachal</p>
               </li>
               <li>
                 <h6>GPS no.</h6>

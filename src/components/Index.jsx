@@ -113,12 +113,12 @@ function Index() {
             </h6>
           </div>
           <div className="btns my-4">
-            <button className="btn btn-lg btn-white btn-custom">
+            <Link to='/SafetyAlarm' className="btn btn-lg btn-white btn-custom">
               Safety alarm
-            </button>
-            <button className="btn btn-lg btn-white btn-custom mx-4">
+            </Link>
+            <Link to='/EmergencyStop' className="btn btn-lg btn-white btn-custom mx-4">
               Emergency stop
-            </button>
+            </Link>
             {/* <button className="btn btn-lg btn-white btn-custom">
               Safety feature
             </button> */}
@@ -211,8 +211,8 @@ function Index() {
       <section className="what-else mb-65">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-12 col-md-6">
-              <h1 className="title fw-bold my-4">
+            <div className="col-12 col-lg-6">
+              <h1 className="title fw-bold mb-4">
                 What else&nbsp;
                 <span className="primary">can you do</span>
               </h1>
@@ -243,7 +243,7 @@ function Index() {
                 </div>
               </form>
             </div>
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-lg-6">
               <div className="right">
                 <img
                   src={images.whatElse}
@@ -263,18 +263,9 @@ function Index() {
             What makes us&nbsp;
             <span className="primary">different</span>
           </h1>
-          <div className="row align-items-center">
-            <div className="col-12 col-md-4">
-              <div className="right">
-                <img
-                  src={images.safetyAlarm}
-                  className="img-contain h-auto w-100%"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div className="col-12 col-md-8">
-              <h2 className="title fw-bold my-4">Safety alarm</h2>
+          <div className="row align-items-center flex-md-row-reverse">
+          <div className="col-12 col-lg-8">
+              <h2 className="title fw-bold mb-4">Safety alarm</h2>
               <p>
                 We want to add a special alarm in buses that can call for help
                 if there's an emergency. This alarm can let the police,
@@ -284,10 +275,20 @@ function Index() {
                 bus is and ask for help. This way, we can make sure people get
                 the help they need quickly.
               </p>
-              <button className="btn btn-primary btn-custom">
+              <Link to='/SafetyAlarm' className="btn btn-primary btn-custom">
                 Safety alarm
-              </button>
+              </Link>
             </div>
+            <div className="col-12 col-lg-4">
+              <div className="right">
+                <img
+                  src={images.safetyAlarm}
+                  className="img-contain h-auto w-100%"
+                  alt=""
+                />
+              </div>
+            </div>
+           
           </div>
         </div>
       </section>
@@ -296,8 +297,8 @@ function Index() {
       <section className="what-else mb-65">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-12 col-md-6">
-              <h2 className="title fw-bold my-4">Emergency stop</h2>
+            <div className="col-12 col-lg-8">
+              <h2 className="title fw-bold mb-4">Emergency stop</h2>
               <p>
                 Imagine you're driving in the hills and your car suddenly stops
                 working. With Busathi, you can quickly find the nearest bus and
@@ -306,11 +307,11 @@ function Index() {
                 situation. It's like having a helping hand when you need it the
                 most!
               </p>
-              <button className="btn btn-primary btn-custom">
+              <Link to='/EmergencyStop' className="btn btn-primary btn-custom">
                 Emergency stop
-              </button>
+              </Link>
             </div>
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-lg-4">
               <div className="right">
                 <img
                   src={images.EmergencyStop}
@@ -326,7 +327,7 @@ function Index() {
       <section className="container mb-65">
         <div className="google-download">
           <h1 className="title fw-bold mb-4">ENJOY THE APP!</h1>
-          <div className="row">
+          <div className="row gap-3">
             <div className="col-12 col-md-3">
               <h5>Scan to download</h5>
               <img src={images.scanner} alt="" />

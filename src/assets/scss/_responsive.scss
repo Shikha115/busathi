@@ -1,0 +1,48 @@
+@media screen and (max-width: 768px) {
+  .login .btns {
+    justify-content: flex-start !important;
+    row-gap: 10px !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+@media screen and (max-width: 992px) {
+  .what-else .right img {
+    display: none;
+  }
+  .safety-alarm img {
+    display: none;
+  }
+  .dashboard .right {
+    margin-top: 1pc;
+  }
+  .bus-detail {
+    .box {
+      flex-direction: column;
+      align-items: flex-start;
+      &-inner {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .home-banner {
+    flex-direction: column;
+    .get-booking-detail {
+      flex-direction: column;
+    }
+    .box {
+      padding: 10px 1pc;
+    }
+
+    .btn-primary {
+      width: max-content;
+      margin: 1pc;
+      min-width: auto;
+      border-radius: 7px;
+    }
+  }
+}

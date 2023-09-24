@@ -127,6 +127,7 @@ ul.location-box {
     display: flex;
     align-items: stretch;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
   .btn-primary {
     min-width: 300px;
@@ -195,13 +196,14 @@ ul.location-box {
     gap: 1pc;
     border: 1px solid #00000020;
     padding: 1pc;
+    margin-bottom: 1pc;
     &:not(:last-child) {
-      margin-bottom: 2pc;
+      margin-bottom: 1pc;
     }
     & > img {
       object-fit: contain;
       width: auto;
-      height: 115px;
+      height: 50px;
       transform: scaleX(-1);
     }
     &-inner {
@@ -211,6 +213,14 @@ ul.location-box {
       gap: 1pc;
       margin-bottom: 1pc;
       flex-wrap: wrap;
+      h6 {
+        font-size: 12px;
+        margin-bottom: 3px;
+        color: gray;
+      }
+      p {
+        font-weight: 600;
+      }
     }
   }
   .outer-box {
@@ -219,25 +229,22 @@ ul.location-box {
   .btns {
     display: flex;
     align-items: center;
-    gap: 1pc;
+    column-gap: 1pc;
+    row-gap: 10px;
+    flex-wrap: wrap;
   }
 }
 
 .bus-view-detail {
   overflow: hidden;
-  .title{
-    position: relative;
-    z-index: 10;
-  }
+
   .gif {
-    position: relative;
-    top: -4pc;
-    margin-bottom: -7pc;
-    overflow: hidden;
     img {
-      height: 22pc;
+      height: 8pc;
       width: auto;
       object-fit: contain;
+      margin: 2pc 0;
+      transform: scaleX(-1);
     }
   }
 
@@ -268,3 +275,42 @@ ul.location-box {
     }
   }
 }
+
+.dashboard {
+  .left {
+    border-radius: 5px;
+  }
+  ul.tabs {
+    background: #504848;
+    color: #fff;
+    border-radius: 5px;
+    li {
+      padding: 10px 1pc;
+      cursor: pointer;
+      &:not(:last-child) {
+        border-bottom: 1px solid #fff;
+      }
+      &.active {
+        background: #fcd469;
+        color: #000;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.safety-alarm {
+  .form {
+    background-color: #00000010;
+    padding: 1pc;
+    label {
+      font-weight: 500;
+    }
+  }
+}
+
+.safety-alarm .all-bus-location {
+  height: 400px;
+  position: static;
+}
+
