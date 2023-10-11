@@ -5,6 +5,7 @@ import Modal from "react-bootstrap/Modal";
 
 function EmergencyStop() {
   const [showModal, setShowModal] = useState(false);
+  const [boxText, setBoxText] = useState();
   const [sendingTo, setSendingTo] = useState([
     {
       tab: 1,
@@ -14,10 +15,10 @@ function EmergencyStop() {
       tab: 2,
       name: "Vehicle problem",
     },
-    {
-      tab: 3,
-      name: "Other",
-    },
+    // {
+    //   tab: 3,
+    //   name: boxText?"Other":"Disabled",
+    // },
   ]);
   const [sentValue, setSentValue] = useState("");
   return (
@@ -44,6 +45,8 @@ function EmergencyStop() {
                       className="form-control"
                       placeholder="Share your concern here"
                       required
+                      value={boxText}
+                      onChange={(e) => setBoxText(e.target.value)}
                     ></textarea>
                   </div>
                   <div className="col-12">
@@ -63,6 +66,16 @@ function EmergencyStop() {
                           </button>
                         );
                       })}
+                      <button
+                        className="btn btn-custom btn-primary"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setShowModal(true);
+                        }}
+                        disabled={!boxText}
+                      >
+                        {boxText ? "Other" : "Disabled"}
+                      </button>
                     </div>
                   </div>
                 </form>
