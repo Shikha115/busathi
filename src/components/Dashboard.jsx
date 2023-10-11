@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Header from "./Header";
 import { images } from "../Images/images";
 import { Link } from "react-router-dom";
+import Modal from 'react-bootstrap/Modal';
 
 function Dashboard() {
+  const [showModal, setShowModal] = useState(false);
   const [tabs, setTabs] = useState([
     {
       name: "Bookings",
@@ -127,9 +129,10 @@ function Dashboard() {
                                 </Link>
                                 <button
                                   className="btn btn-primary btn-custom btn-sm"
-                                  onClick={(e) => e.preventDefault()}
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#callModal"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    setShowModal(true);
+                                  }}
                                 >
                                   Cancel Booking
                                 </button>
@@ -299,39 +302,20 @@ function Dashboard() {
         </section>
 
         {/* <!-- Modal --> */}
-        <div
-          class="modal fade"
-          id="callModal"
-          tabindex="-1"
-          aria-labelledby="callModal"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="callModalLabel">
-                  Cancellation
-                </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">Your booking has been cancelled.</div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+          <Modal.Header closeButton>
+            <Modal.Title>Cancellation</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Your booking has been cancelled.</Modal.Body>
+          <Modal.Footer>
+            <button
+              className="btn btn-primary"
+              onClick={() => setShowModal(false)}
+            >
+              Close
+            </button>
+          </Modal.Footer>
+        </Modal>
       </main>
     </>
   );

@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import { images } from "../Images/images";
+import Modal from "react-bootstrap/Modal";
 
 function SafetyAlarm() {
+  const [sendingTo, setSendingTo] = useState([
+    {
+      tab: 1,
+      name: "Police station",
+    },
+    {
+      tab: 2,
+      name: "Hospital",
+    },
+    {
+      tab: 3,
+      name: "Family",
+    },
+  ]);
+  const [sentValue, setSentValue] = useState("");
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
       <Header />
@@ -25,50 +43,28 @@ function SafetyAlarm() {
                       cols="30"
                       rows="5"
                       className="form-control"
+                      placeholder="Share your concern, if possible..."
                     ></textarea>
                   </div>
                   <div className="col-12">
                     <label>Send this to nearby</label>
-                    <div>
-                      <div class="form-check form-check-inline">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          id="inlineCheckbox1"
-                          value="option1"
-                        />
-                        <label
-                          class="form-check-label"
-                          htmlFor="inlineCheckbox1"
-                        >
-                          Police station
-                        </label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          id="inlineCheckbox2"
-                          value="option1"
-                        />
-                        <label
-                          class="form-check-label"
-                          htmlFor="inlineCheckbox2"
-                        >
-                          Hospital
-                        </label>
-                      </div>
+                    <div className="d-flex gap-2">
+                      {sendingTo.map((item, i) => {
+                        return (
+                          <button
+                            className="btn btn-custom btn-primary"
+                            key={i}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setSentValue(item.tab);
+                              setShowModal(true);
+                            }}
+                          >
+                            {item.name}
+                          </button>
+                        );
+                      })}
                     </div>
-                  </div>
-                  <div className="col-12">
-                    <button
-                      className="btn btn-custom btn-primary"
-                      onClick={(e) => e.preventDefault()}
-                      data-bs-toggle="modal"
-                      data-bs-target="#callModal"
-                    >
-                      Submit
-                    </button>
                   </div>
                 </form>
               </div>
@@ -80,39 +76,37 @@ function SafetyAlarm() {
         </section>
 
         {/* <!-- Modal --> */}
-        <div
-          class="modal fade"
-          id="callModal"
-          tabindex="-1"
-          aria-labelledby="callModal"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="callModalLabel">
-                  Safety Alarm
-                </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">Wait for the response. Your location has been sent to nearby hospital & police station</div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+          <Modal.Header closeButton>
+            <Modal.Title> Safety Alarm</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {sentValue === 1 ? (
+              <p>
+                Wait for the response. Your location has been sent to nearby
+                police station.
+              </p>
+            ) : sentValue === 2 ? (
+              <p>
+                Wait for the response. Your location has been sent to nearby
+                hospital.
+              </p>
+            ) : (
+              <p>
+                Wait for the response. Your location has been sent to nearby
+                family member.
+              </p>
+            )}
+          </Modal.Body>
+          <Modal.Footer>
+            <button
+              className="btn btn-primary"
+              onClick={() => setShowModal(false)}
+            >
+              Close
+            </button>
+          </Modal.Footer>
+        </Modal>
       </main>
     </>
   );

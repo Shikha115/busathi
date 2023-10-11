@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./assets/scss/main.scss";
-import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
+// import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Index from "./components/Index";
