@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 
 function Index() {
   const [fromValue, setFromValue] = useState("");
+  const [showFromBox, setShowFromBox] = useState(false);
   const [ToValue, setToValue] = useState("");
-  const [Credentials, setCredentials] = useState(true)
+  const [showToBox, setShowToBox] = useState(false);
+  const [Credentials, setCredentials] = useState(false);
   const [fromLocation, setFromLocation] = useState([
     {
       name: "Salem New Bus Stand",
@@ -89,27 +91,25 @@ function Index() {
     },
   ]);
 
-
   return (
     <main>
       <section className="home-top secondary-bg pt-5 pb-65">
         <div className="container text-center">
-          <div className="top-btns text-end">
-            {
-              Credentials ?
-                <Link to="/" className="btn btn-white btn-custom">
-                  Logged In
+          <div className="top-btns d-flex gap-2 justify-content-end">
+            {Credentials ? (
+              <Link to="/" className="btn btn-white btn-custom">
+                Logged In
+              </Link>
+            ) : (
+              <>
+                <Link to="/Register" className="btn btn-white btn-custom">
+                  Register
                 </Link>
-                :
-                <>
-                  <Link to="/Register" className="btn btn-white btn-custom" style={{ marginRight: '20px' }}>
-                    Register
-                  </Link>
-                  <Link to="/Login" className="btn btn-white btn-custom">
-                    Login
-                  </Link>
-                </>
-            }
+                <Link to="/Login" className="btn btn-white btn-custom">
+                  Login
+                </Link>
+              </>
+            )}
           </div>
           <Link to="/">
             <img src={images.logoWhite} alt="" className="main-logo" />
@@ -127,10 +127,13 @@ function Index() {
             </h6>
           </div>
           <div className="btns my-4">
-            <Link to='/SafetyAlarm' className="btn btn-lg btn-white btn-custom">
+            <Link to="/SafetyAlarm" className="btn btn-lg btn-white btn-custom">
               Safety alarm
             </Link>
-            <Link to='/EmergencyStop' className="btn btn-lg btn-white btn-custom mx-4">
+            <Link
+              to="/EmergencyStop"
+              className="btn btn-lg btn-white btn-custom mx-4"
+            >
               Emergency stop
             </Link>
             {/* <button className="btn btn-lg btn-white btn-custom">
@@ -148,21 +151,35 @@ function Index() {
                   type="text"
                   className="form-control"
                   value={fromValue}
-                  onChange={(e) => setFromValue(e.target.value)}
+                  onChange={(e) => {
+                    setFromValue(e.target.value);
+                    setShowFromBox(true);
+                  }}
                 />
-                {fromValue && (
+                {showFromBox && fromValue && (
                   <ul className="location-box">
-                    {fromLocation.filter(q => q?.name.toUpperCase().includes(fromValue.toUpperCase())).map((item, i) => {
-                      return (
-                        <li className="box-inner" key={i} onClick={() => { setFromValue(item.name) }}>
-                          <i className="fa-solid fa-location-dot primary"></i>
-                          <div>
-                            <h6 className="mb-0">{item.name}</h6>
-                            <p>{item.text}</p>
-                          </div>
-                        </li>
-                      );
-                    })}
+                    {fromLocation
+                      .filter((q) =>
+                        q?.name.toUpperCase().includes(fromValue.toUpperCase())
+                      )
+                      .map((item, i) => {
+                        return (
+                          <li
+                            className="box-inner pointer"
+                            key={i}
+                            onClick={() => {
+                              setFromValue(item.name);
+                              setShowFromBox(false);
+                            }}
+                          >
+                            <i className="fa-solid fa-location-dot primary"></i>
+                            <div>
+                              <h6 className="mb-0">{item.name}</h6>
+                              <p>{item.text}</p>
+                            </div>
+                          </li>
+                        );
+                      })}
                   </ul>
                 )}
               </div>
@@ -175,21 +192,35 @@ function Index() {
                   type="text"
                   className="form-control"
                   value={ToValue}
-                  onChange={(e) => setToValue(e.target.value)}
+                  onChange={(e) => {
+                    setToValue(e.target.value);
+                    setShowToBox(true);
+                  }}
                 />
-                {ToValue && (
+                {showToBox && ToValue && (
                   <ul className="location-box">
-                    {fromLocation.filter(q => q?.name.toUpperCase().includes(ToValue.toUpperCase())).map((item, i) => {
-                      return (
-                        <li className="box-inner" key={i} onClick={() => setToValue(item.name)}>
-                          <i className="fa-solid fa-location-dot primary"></i>
-                          <div>
-                            <h6 className="mb-0">{item.name}</h6>
-                            <p>{item.text}</p>
-                          </div>
-                        </li>
-                      );
-                    })}
+                    {fromLocation
+                      .filter((q) =>
+                        q?.name.toUpperCase().includes(ToValue.toUpperCase())
+                      )
+                      .map((item, i) => {
+                        return (
+                          <li
+                            className="box-inner pointer"
+                            key={i}
+                            onClick={() => {
+                              setToValue(item.name);
+                              setShowToBox(false);
+                            }}
+                          >
+                            <i className="fa-solid fa-location-dot primary"></i>
+                            <div>
+                              <h6 className="mb-0">{item.name}</h6>
+                              <p>{item.text}</p>
+                            </div>
+                          </li>
+                        );
+                      })}
                   </ul>
                 )}
               </div>
@@ -201,7 +232,7 @@ function Index() {
                 <input type="date" className="form-control" />
               </div>
             </div>
-            <Link to='/BusDetail' className="btn btn-lg btn-primary btn-custom">
+            <Link to="/BusDetail" className="btn btn-lg btn-primary btn-custom">
               Search Buses
             </Link>
           </form>
@@ -289,7 +320,7 @@ function Index() {
                 bus is and ask for help. This way, we can make sure people get
                 the help they need quickly.
               </p>
-              <Link to='/SafetyAlarm' className="btn btn-primary btn-custom">
+              <Link to="/SafetyAlarm" className="btn btn-primary btn-custom">
                 Safety alarm
               </Link>
             </div>
@@ -302,7 +333,6 @@ function Index() {
                 />
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -321,7 +351,7 @@ function Index() {
                 situation. It's like having a helping hand when you need it the
                 most!
               </p>
-              <Link to='/EmergencyStop' className="btn btn-primary btn-custom">
+              <Link to="/EmergencyStop" className="btn btn-primary btn-custom">
                 Emergency stop
               </Link>
             </div>
