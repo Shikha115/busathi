@@ -3,11 +3,7 @@ import { images } from "../Images/images";
 import { Link } from "react-router-dom";
 
 function Header() {
-  const [isLogin, setIsLogin] = useState(false);
-  useEffect(() => {
-    setIsLogin(localStorage.getItem("isLogin"));
-    console.log("login - ", isLogin);
-  }, [localStorage.getItem("isLogin")]);
+  const [isLogin, setIsLogin] = useState(localStorage.getItem("isLogin"));
   return (
     <header>
       <section className="header secondary-bg py-2">
@@ -18,12 +14,14 @@ function Header() {
             </Link>
             <div className="top-btns text-end">
               {isLogin ? (
+              // console.log("login - ", isLogin);
                 <Link
                   to="/Login"
                   className="btn btn-white btn-custom"
                   onClick={() => {
-                    localStorage.setItem("isLogin", false);
-                    setIsLogin(false);
+                    // localStorage.setItem("isLogin", false);
+                    console.log("render");
+                    localStorage.clear();
                   }}
                 >
                   Log Out

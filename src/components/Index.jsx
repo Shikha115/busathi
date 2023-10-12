@@ -90,10 +90,8 @@ function Index() {
       text: "Bangalore, Karnataka",
     },
   ]);
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(localStorage.getItem("isLogin"));
   useEffect(() => {
-    setIsLogin(localStorage.getItem("isLogin"));
-    setTimeout(()=>console.log('login - ',isLogin),2000)
   }, [localStorage.getItem("isLogin")]);
 
   return (
@@ -106,8 +104,9 @@ function Index() {
                 to="/"
                 className="btn btn-white btn-custom"
                 onClick={() => {
-                  localStorage.setItem("isLogin", false);
-                  setIsLogin(false);
+                  console.log('render');
+                  window.location.reload();
+                  localStorage.clear();
                 }}
               >
                 Log Out
