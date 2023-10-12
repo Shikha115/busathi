@@ -70,7 +70,7 @@ function Dashboard() {
                   {tabs.map((item, i) => {
                     if (item.tab === 1 && item.active) {
                       return (
-                        <div className="bus-detail">
+                        <div className="bus-detail" key={i}>
                           <div className="box">
                             <img src={images.busGif} alt="" />
                             <div className="outer-box">
@@ -144,7 +144,7 @@ function Dashboard() {
                     }
                     if (item.tab === 2 && item.active) {
                       return (
-                        <div className="track_bus">
+                        <div className="track_bus" key={i}>
                           <h4 className="title fw-bold">TRACK MY BUS</h4>
                           <div className="map">
                             <iframe
@@ -158,7 +158,7 @@ function Dashboard() {
                     }
                     if (item.tab === 3 && item.active) {
                       return (
-                        <div className="bus-detail">
+                        <div className="bus-detail" key={i}>
                           <div className="box">
                             <img src={images.busGif} alt="" />
                             <div className="outer-box">

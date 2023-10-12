@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { images } from "../Images/images";
 import { Link } from "react-router-dom";
 
@@ -90,15 +90,27 @@ function Index() {
       text: "Bangalore, Karnataka",
     },
   ]);
+  const [isLogin, setIsLogin] = useState(false);
+  useEffect(() => {
+    setIsLogin(localStorage.getItem("isLogin"));
+    setTimeout(()=>console.log('login - ',isLogin),2000)
+  }, [localStorage.getItem("isLogin")]);
 
   return (
     <main>
       <section className="home-top secondary-bg pt-5 pb-65">
         <div className="container text-center">
           <div className="top-btns d-flex gap-2 justify-content-end">
-            {Credentials ? (
-              <Link to="/" className="btn btn-white btn-custom">
-                Logged In
+            {isLogin ? (
+              <Link
+                to="/"
+                className="btn btn-white btn-custom"
+                onClick={() => {
+                  localStorage.setItem("isLogin", false);
+                  setIsLogin(false);
+                }}
+              >
+                Log Out
               </Link>
             ) : (
               <>

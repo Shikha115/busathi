@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./assets/scss/main.scss";
 // import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -16,6 +16,8 @@ import SafetyAlarm from "./components/SafetyAlarm";
 import EmergencyStop from "./components/EmergencyStop";
 
 function App() {
+ 
+  
   return (
     <>
       {/* <Header /> */}

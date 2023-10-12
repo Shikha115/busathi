@@ -12,6 +12,11 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const hanleLogin = () => {
+    localStorage.setItem("isLogin", email && password ? true : false);
+    console.log("login");
+  };
+
   return (
     <>
       <Header />
@@ -23,7 +28,11 @@ function Login() {
             </div>
             <div className="row">
               <div className="col-12 col-md-10 col-lg-6 col-xxl-4 mx-auto">
-                <form action="/Account" className="row form">
+                <form
+                  action="/Account"
+                  onSubmit={hanleLogin}
+                  className="row form"
+                >
                   <div className="col-12 mb-4">
                     <label className="mb-0">EMAIL</label>
                     <input
@@ -67,8 +76,9 @@ function Login() {
                     <Link
                       to="/Dashboard"
                       //   onClick={() => handleSubmit()}
-                      type="button"
+                      type="submit"
                       className="btn btn-hover btn-custom btn-primary w-100"
+                      onClick={hanleLogin}
                     >
                       SIGN IN
                     </Link>
