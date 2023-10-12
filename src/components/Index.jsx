@@ -5,97 +5,111 @@ import { Link } from "react-router-dom";
 function Index() {
   const [fromValue, setFromValue] = useState("");
   const [ToValue, setToValue] = useState("");
+  const [Credentials, setCredentials] = useState(true)
   const [fromLocation, setFromLocation] = useState([
     {
       name: "Salem New Bus Stand",
-      text: "Salem",
+      text: "Salem, Tamil Nadu",
     },
     {
-      name: "New Bus Stand",
-      text: "Tirunelveli",
+      name: "Tirunelveli Bus Stand",
+      text: "Tirunelveli, Tamil Nadu",
     },
     {
-      name: "New Bus Stand",
-      text: "Karaikudi",
+      name: "Karaikudi Bus Stand",
+      text: "Karaikudi, Tamil Nadu",
     },
     {
-      name: "New Bus Stand",
-      text: "Thoothukudi",
+      name: "Thoothukudi Bus Stand",
+      text: "Thoothukudi, Tamil Nadu",
     },
     {
-      name: "New Bus Stand",
-      text: "Thanjavur",
+      name: "Thanjavur Bus Stand",
+      text: "Thanjavur, Tamil Nadu",
     },
     {
-      name: "Avinashi New Bus Stand",
-      text: "Tirupur",
+      name: "Tirupur Bus Stand",
+      text: "Tirupur, Tamil Nadu",
     },
     {
-      name: "New Bus Stand",
-      text: "Vellore",
+      name: "Vellore Bus Stand",
+      text: "Vellore, Tamil Nadu",
     },
     {
-      name: "Roshanpura (New Market)",
-      text: "Bhopal",
+      name: "Bhopal New Market",
+      text: "Bhopal, Madhya Pradesh",
     },
     {
-      name: "Karaikal New Bus Stand",
-      text: "Karaikal",
+      name: "Karaikal Bus Stand",
+      text: "Karaikal, Puducherry",
     },
     {
-      name: "New Tehri(uttarakhand)<",
-      text: "bI j",
+      name: "New Tehri",
+      text: "Tehri, Uttarakhand",
     },
     {
-      name: "New Bus Stand",
-      text: "Tenkasi",
+      name: "Tenkasi Bus Stand",
+      text: "Tenkasi, Tamil Nadu",
     },
     {
-      name: "Newai<",
-      text: "bI j",
+      name: "Newai",
+      text: "Newai, Rajasthan",
     },
     {
-      name: "Newasa Phata<",
-      text: "bI j",
+      name: "Newasa Phata",
+      text: "Newasa, Maharashtra",
     },
     {
       name: "New Sangavi",
-      text: "Pune",
+      text: "Pune, Maharashtra",
     },
     {
-      name: "New Bus Stand",
-      text: "Kumbakonam",
+      name: "Kumbakonam Bus Stand",
+      text: "Kumbakonam, Tamil Nadu",
     },
     {
-      name: "New Bus Stand",
-      text: "Rajapalayam",
+      name: "Rajapalayam Bus Stand",
+      text: "Rajapalayam, Tamil Nadu",
     },
     {
       name: "New Nallakunta",
-      text: "Hyderabad",
+      text: "Hyderabad, Telangana",
     },
     {
-      name: "New Bus Stand",
-      text: "Kundapur",
+      name: "Kundapur Bus Stand",
+      text: "Kundapur, Karnataka",
     },
     {
       name: "Dlf Newtown",
-      text: "Bangalore",
+      text: "Bangalore, Karnataka",
     },
     {
       name: "New Thippasandra",
-      text: "Bangalore",
+      text: "Bangalore, Karnataka",
     },
   ]);
+
 
   return (
     <main>
       <section className="home-top secondary-bg pt-5 pb-65">
         <div className="container text-center">
           <div className="top-btns text-end">
-            <Link to="/Login" className="btn btn-white btn-custom">
-              Login
-            </Link>
+            {
+              Credentials ?
+                <Link to="/" className="btn btn-white btn-custom">
+                  Logged In
+                </Link>
+                :
+                <>
+                  <Link to="/Register" className="btn btn-white btn-custom" style={{ marginRight: '20px' }}>
+                    Register
+                  </Link>
+                  <Link to="/Login" className="btn btn-white btn-custom">
+                    Login
+                  </Link>
+                </>
+            }
           </div>
           <Link to="/">
             <img src={images.logoWhite} alt="" className="main-logo" />
@@ -138,9 +152,9 @@ function Index() {
                 />
                 {fromValue && (
                   <ul className="location-box">
-                    {fromLocation.map((item, i) => {
+                    {fromLocation.filter(q => q?.name.toUpperCase().includes(fromValue.toUpperCase())).map((item, i) => {
                       return (
-                        <li className="box-inner" key={i}>
+                        <li className="box-inner" key={i} onClick={() => { setFromValue(item.name) }}>
                           <i className="fa-solid fa-location-dot primary"></i>
                           <div>
                             <h6 className="mb-0">{item.name}</h6>
@@ -165,9 +179,9 @@ function Index() {
                 />
                 {ToValue && (
                   <ul className="location-box">
-                    {fromLocation.map((item, i) => {
+                    {fromLocation.filter(q => q?.name.toUpperCase().includes(ToValue.toUpperCase())).map((item, i) => {
                       return (
-                        <li className="box-inner" key={i}>
+                        <li className="box-inner" key={i} onClick={() => setToValue(item.name)}>
                           <i className="fa-solid fa-location-dot primary"></i>
                           <div>
                             <h6 className="mb-0">{item.name}</h6>
@@ -264,7 +278,7 @@ function Index() {
             <span className="primary">different</span>
           </h1>
           <div className="row align-items-center flex-md-row-reverse">
-          <div className="col-12 col-lg-8">
+            <div className="col-12 col-lg-8">
               <h2 className="title fw-bold mb-4">Safety alarm</h2>
               <p>
                 We want to add a special alarm in buses that can call for help
@@ -288,7 +302,7 @@ function Index() {
                 />
               </div>
             </div>
-           
+
           </div>
         </div>
       </section>
