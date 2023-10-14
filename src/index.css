@@ -11,3 +11,68 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.skeleton {
+  background-color: #faf5f5cc;
+  border-radius: 12px;
+  box-sizing: border-box;
+  min-height: 80px;
+  width: 90%;
+  margin: 50px auto 30px auto;
+  border: 1px solid rgba(225, 222, 222, 0.419);
+  padding: 30px;
+}
+
+.skeleton__title {
+  background-color: #e7edf1;
+  border-radius: 12px;
+  height: 15px;
+  margin-bottom: 24px;
+  width: 10%;
+}
+
+.skeleton__text {
+  background-color: #e7edf1;
+  border-radius: 8px;
+  height: 10px;
+  margin-top: 16px;
+}
+
+.user-text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.user-skeleton {
+  background-color: #e7edf1;
+  border-radius: 12px;
+  height: 20px;
+  margin: 20px auto 0 auto;
+  width: 200px;
+}
+
+.skeleton__title,
+.skeleton__text,
+.user-skeleton {
+  animation: shimmer 1.2s infinite linear;
+  background-image: linear-gradient(90deg, #e7edf1 0px, #f1f6fa 200px, #e7edf1 400px);
+  background-size: 1200px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px;
+  }
+
+  50% {
+    background-position: 700px;
+  }
+
+  100% {
+    background-position: 700px;
+  }
+}
+
+.skeletion-div{
+  margin-top:100px;
+}
