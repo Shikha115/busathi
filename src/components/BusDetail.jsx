@@ -44,7 +44,7 @@ function BusDetail() {
   // ]);
   const [busDetails, setBusDetails] = useState(null)
   const getdata = async () => {
-    const result = await axios.get('https://busathi.onrender.com/buses/busDetails')
+    const result = await axios.get('https://bus-server-chi.vercel.app/buses/busDetails')
     console.log("🚀 ~ file: BusDetail.jsx:48 ~ getdata ~ result:", result.data)
     setBusDetails(result.data)
   }

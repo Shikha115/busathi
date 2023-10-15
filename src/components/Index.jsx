@@ -7,7 +7,6 @@ function Index() {
   const [showFromBox, setShowFromBox] = useState(false);
   const [ToValue, setToValue] = useState("");
   const [showToBox, setShowToBox] = useState(false);
-  const [Credentials, setCredentials] = useState(false);
   const [fromLocation, setFromLocation] = useState([
     {
       name: "Salem New Bus Stand",
@@ -90,9 +89,9 @@ function Index() {
       text: "Bangalore, Karnataka",
     },
   ]);
-  const [isLogin, setIsLogin] = useState(localStorage.getItem("isLogin"));
+  const isLogin = localStorage.getItem('token')
   useEffect(() => {
-  }, [localStorage.getItem("isLogin")]);
+  }, [isLogin]);
 
   return (
     <main>

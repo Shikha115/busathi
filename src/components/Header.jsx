@@ -3,7 +3,7 @@ import { images } from "../Images/images";
 import { Link } from "react-router-dom";
 
 function Header() {
-  const [isLogin, setIsLogin] = useState(localStorage.getItem("isLogin"));
+  const isLogin = localStorage.getItem('token')
   return (
     <header>
       <section className="header secondary-bg py-2">
