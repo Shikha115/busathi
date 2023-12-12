@@ -9,7 +9,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 function Header() {
-  const isLogin = localStorage.getItem('token')
+  const [isLogin, setIsLogin] = useState(localStorage.getItem('token'))
   return (
     <header>
       <section className="header">

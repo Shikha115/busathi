@@ -90,11 +90,11 @@ function Index() {
       text: "Bangalore, Karnataka",
     },
   ]);
-  const isLogin = localStorage.getItem('token')
-  useEffect(() => {
-    setIsLogin(localStorage.getItem("isLogin"));
-    setTimeout(() => console.log("login - ", isLogin), 2000);
-  }, [localStorage.getItem("isLogin")]);
+  // const isLogin = localStorage.getItem('token')
+  // useEffect(() => {
+  //   setIsLogin(localStorage.getItem("isLogin"));
+  //   setTimeout(() => console.log("login - ", isLogin), 2000);
+  // }, [localStorage.getItem("isLogin")]);
 
   return (
     <>
