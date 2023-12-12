@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { images } from "../Images/images";
 import { Link } from "react-router-dom";
+import { FaHeadphonesAlt } from "react-icons/fa";
+import { FaUser } from "react-icons/fa6";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Offcanvas from "react-bootstrap/Offcanvas";
 
 function Header() {
   const [isLogin, setIsLogin] = useState(false);
@@ -10,32 +16,88 @@ function Header() {
   }, [localStorage.getItem("isLogin")]);
   return (
     <header>
-      <section className="header secondary-bg py-2">
-        <div className="container text-center">
-          <div className="d-flex align-items-center justify-content-between">
-            <Link to="/">
-              <img src={images.logoWhite} alt="" className="main-logo" />
-            </Link>
-            <div className="top-btns text-end">
-              {isLogin ? (
-                <Link
-                  to="/Login"
-                  className="btn btn-white btn-custom"
-                  onClick={() => {
-                    localStorage.setItem("isLogin", false);
-                    setIsLogin(false);
-                  }}
-                >
-                  Log Out
+      <section className="header">
+        {/* ========================================================================== */}
+        <div className="bg-dark text-white top-header">
+          <div className="container">
+            <marquee direction="left">
+              Busathi: Your trusty bus buddy ensuring safe and enjoyable
+              travels!
+            </marquee>
+            <ul>
+              <li>
+                <Link>
+                  <FaHeadphonesAlt />
+                  Help
                 </Link>
-              ) : (
-                <Link to="/Login" className="btn btn-white btn-custom">
-                  Login
-                </Link>
-              )}
-            </div>
+              </li>
+              <li>
+                {isLogin ? (
+                  <Link
+                    to="/Login"
+                    onClick={() => {
+                      localStorage.setItem("isLogin", false);
+                      setIsLogin(false);
+                    }}
+                  >
+                    <FaUser />
+                    Log Out
+                  </Link>
+                ) : (
+                  <Link to="/Login">
+                    <FaUser />
+                    Login
+                  </Link>
+                )}
+              </li>
+            </ul>
           </div>
         </div>
+        {/* ========================================================================== */}
+
+        <Navbar expand="lg">
+          <div className="container">
+            <div className="navbar-brand p-0" to="/">
+              <img src={images.logo} alt="" className="main-logo" />
+            </div>
+            <Navbar.Toggle aria-controls="offcanvasNavbar-expand-lg" />
+            <Navbar.Offcanvas
+              id="offcanvasNavbar-expand-lg"
+              aria-labelledby="offcanvasNavbarLabel-expand-lg"
+              placement="end"
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id="offcanvasNavbarLabel-expand-lg">
+                  Offcanvas
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Nav className="justify-content-end flex-grow-1">
+                  <Link className="nav-link" to="/">
+                    Home
+                  </Link>
+                  <Link className="nav-link" to="/">
+                    About Us
+                  </Link>
+                  <Link className="nav-link" to="/">
+                    Safety Features
+                  </Link>
+                  <Link className="nav-link" to="/">
+                    About Us
+                  </Link>
+                  <Link className="nav-link" to="/">
+                    Book
+                  </Link>
+                  <Link className="nav-link" to="/">
+                    Contact
+                  </Link>
+                </Nav>
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </div>
+        </Navbar>
+
+        {/* ========================================================================== */}
       </section>
     </header>
   );

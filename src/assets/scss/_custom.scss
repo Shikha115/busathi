@@ -7,7 +7,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   background-color: #fff;
-  font-family: $montserrat;
+  font-family: $sora;
   color: $black;
   line-height: 1.7em;
   font-weight: 400;
@@ -133,7 +133,7 @@ button {
 }
 
 .montserrat {
-  font-family: $montserrat !important;
+  font-family: $epilogue !important;
 }
 
 .primary {
@@ -172,7 +172,7 @@ button {
 }
 
 p {
-  font-size: 15px;
+  color: #404040;
   &:last-child {
     margin-bottom: 0;
   }
@@ -215,7 +215,8 @@ h3,
 h4,
 h5,
 h6 {
-  color: $black;
+  // color: $black;
+  font-family: $epilogue;
 }
 
 .btn-sm {
