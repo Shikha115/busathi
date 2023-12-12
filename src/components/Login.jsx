@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import Header from "./Header";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Login() {
   const [type, settype] = useState("password");
   const [showPassword, setshowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const Navigate = useNavigate()
   const handlePassword = () => {
     type === "password" ? settype("text") : settype("password");
     setshowPassword(!showPassword);
   };
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const hanleLogin = () => {
-    localStorage.setItem("isLogin", email && password ? true : false);
-    console.log("login");
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const data = await axios.post('https://bus-server-chi.vercel.app/users/Login', { email, password })
+    localStorage.setItem("token", JSON.stringify(data.data));
+    Navigate('/Dashboard')
   };
 
   return (
@@ -29,8 +33,8 @@ function Login() {
             <div className="row">
               <div className="col-12 col-md-10 col-lg-6 col-xxl-4 mx-auto">
                 <form
-                  action="/Account"
-                  onSubmit={hanleLogin}
+                  action="POST"
+                  onSubmit={handleSubmit}
                   className="row form"
                 >
                   <div className="col-12 mb-4">
@@ -73,15 +77,13 @@ function Login() {
                     </div>
                   </div>
                   <div className="col-12 text-center pt-1">
-                    <Link
-                      to="/Dashboard"
+                    <button
                       //   onClick={() => handleSubmit()}
                       type="submit"
                       className="btn btn-hover btn-custom btn-primary w-100"
-                      onClick={hanleLogin}
                     >
                       SIGN IN
-                    </Link>
+                    </button>
                     <div className="mt-3">
                       <Link to="/Register" className="text-muted btn p-0 fs-6">
                         Create account
