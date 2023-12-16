@@ -43,6 +43,7 @@
 .home-top {
   background-image: url("../images/buses/1.jpg");
   background-attachment: fixed;
+  background-size: cover;
   box-shadow: inset 0px 0px 20px 2000px #0000007f;
   padding: 2pc;
   color: $white;
@@ -71,6 +72,77 @@
     }
   }
 }
+
+.page-banner {
+  background-attachment: fixed;
+  background-size: cover;
+  box-shadow: inset 0px 0px 20px 2000px #00000093;
+  padding: 2pc;
+  color: $white;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    text-align: center;
+    font-size: 55px;
+  }
+  ul {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+  a:hover {
+    color: $primary;
+    transition: all 0.5s ease-in-out;
+  }
+  li,
+  a,
+  h1 {
+    color: #fff;
+  }
+}
+
+.safety-features {
+  ul.tabs {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    li {
+      cursor: pointer;
+      background: lightgray;
+      padding: 10px 1pc;
+      font-weight: 500;
+      text-transform: capitalize;
+      font-size: 17px;
+      &.active {
+        background: $primary;
+        transition: all 0.5s ease-in-out;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.safety-alarm {
+  h2.title {
+    font-weight: 600;
+  }
+  .img img {
+    height: 300px;
+  }
+  .form {
+    background-color: #00000010;
+    padding: 1pc;
+    label {
+      font-weight: 500;
+    }
+  }
+}
+
 .three-box .box {
   border-left: 1px solid #c3c3c3;
   padding: 0 2pc;
@@ -207,16 +279,117 @@ ul.location-box {
   }
 }
 
-.home-service{
-  .box{
+.home-service {
+  .box {
     padding: 1pc;
     // box-shadow: 0 0 15px 0 #00000010;
-    p{
+    p {
       font-size: 15px;
     }
-    img{
+    img {
       height: 250px;
     }
+  }
+}
+
+.best-destination {
+  img {
+    height: 225px;
+    margin-bottom: 10px;
+  }
+  a.content {
+    h6 {
+      color: #000;
+    }
+    p {
+      color: #000;
+      font-style: italic;
+      background-color: $primary;
+      width: max-content;
+      padding: 5px 10px;
+      font-size: 14px;
+      line-height: normal;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+  }
+}
+
+.bus-info {
+  box-shadow: 0 0 15px 0 #00000020;
+  padding: 10px; transition: all .5s linear;
+  &:hover{
+    transform: scale(0.97);
+    transition: all .5s linear;
+  }
+  img {
+    height: 225px;
+    margin-bottom: 10px;
+  }
+  .num {
+    color: #000;
+    font-style: italic;
+    background-color: $secondary;
+    width: max-content;
+    padding: 5px 1pc;
+    font-size: 14px;
+    line-height: normal;
+    border-radius: 5px;
+    font-weight: 600;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  a.content {
+    h6 {
+      color: #000;
+      text-transform: capitalize;
+    }
+    ul{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    li {
+      color: #000;
+      font-style: italic;
+      background-color: lightgray;
+      width: max-content;
+      padding: 5px 10px;
+      font-size: 12px;
+      line-height: normal;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+  }
+}
+
+.home-testimonial {
+  background: #fff;
+  padding: 2pc;
+  box-shadow: 0 0 15px 0 #00000020;
+  margin: 10px;
+
+  h6 {
+    font-size: 22px;
+    margin: 0;
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 1pc;
+    border-bottom: 2px solid #f8c02a;
+  }
+
+  date {
+    font-size: 13px;
+    color: gray;
+  }
+  city {
+    color: gray;
   }
 }
 
@@ -367,17 +540,39 @@ ul.location-box {
   }
 }
 
-.safety-alarm {
-  .form {
-    background-color: #00000010;
-    padding: 1pc;
-    label {
-      font-weight: 500;
+.footer {
+  background-color: #0c1315;
+  &-about {
+    p {
+      color: #ffffff50;
     }
   }
-}
-
-.safety-alarm .all-bus-location {
-  height: 400px;
-  position: static;
+  &-nav {
+    a {
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 5px;
+      &:hover {
+        color: $primary;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+    .all-bus-location {
+      height: 200px;
+      margin-bottom: -4pc;
+    }
+    li:last-child {
+      a {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .copyright {
+    border-top: 1px solid #2d363e;
+    padding: 2pc 0;
+    p {
+      margin-bottom: 0;
+      color: #fff;
+    }
+  }
 }

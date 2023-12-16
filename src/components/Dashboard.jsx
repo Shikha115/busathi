@@ -37,8 +37,6 @@ function Dashboard() {
   };
 
   return (
-    <>
-      <Header />
       <main>
         <section className="dashboard mtb-65">
           <div className="container">
@@ -317,7 +315,7 @@ function Dashboard() {
           </Modal.Footer>
         </Modal>
       </main>
-    </>
+
   );
 }
 

@@ -22,8 +22,7 @@ function Login() {
   };
 
   return (
-    <>
-      <Header />
+  
       <main>
         <section className="login ptb-50">
           <div className="container">
@@ -96,7 +95,6 @@ function Login() {
           </div>
         </section>
       </main>
-    </>
   );
 }
 

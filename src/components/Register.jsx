@@ -43,8 +43,7 @@ function Register() {
     type === "password" ? settype("text") : settype("password");
   };
   return (
-    <>
-      <Header />
+  
       <main>
         <section className="login ptb-50">
           <div className="container">
@@ -300,7 +299,6 @@ function Register() {
           </div>
         </section>
       </main>
-    </>
   );
 }
 

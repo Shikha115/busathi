@@ -23,6 +23,11 @@ import bus_11 from "../assets/images/buses/11.jpg";
 import bus_12 from "../assets/images/buses/12.png";
 import bus_13 from "../assets/images/buses/13.jpg";
 import ambulance from "../assets/images/ambulance.jpeg";
+import dalhousie from "../assets/images/destination/dalhousie.jpg";
+import dharamshala from "../assets/images/destination/dharamshala.jpg";
+import manali from "../assets/images/destination/manali.jpg";
+import parvati from "../assets/images/destination/parvati.jpg";
+import shimla from "../assets/images/destination/shimla.jpg";
 
 export const images = {
   logo,
@@ -30,10 +35,15 @@ export const images = {
   safetyAlarm,
   bus_2,
   bannerBg,
+  dalhousie,
   bus_3,
+  dharamshala,
   ambulance,
+  manali,
   scanner,
+  parvati,
   bus_4,
+  shimla,
   EmergencyStop,
   bus_5,
   appStore,

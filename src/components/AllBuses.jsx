@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Header from "./Header";
-import Data from "../shared/Data";
-import axios from "axios";
-import { Skeleton } from "../Loader";
+import React, { useState } from "react";
+import BusFilter from "./BusFilter";
 import { images } from "../Images/images";
 import { Link } from "react-router-dom";
-function BusDetail() {
+
+function AllBuses() {
   const [busDetails, setBusDetails] = useState([
     {
       img: images.bus_12,
@@ -62,78 +60,12 @@ function BusDetail() {
       fare: "100",
     },
   ]);
-
-  // const [busDetails, setBusDetails] = useState(null)
-  // const getdata = async () => {
-  //   const result = await axios.get('https://bus-server-chi.vercel.app/buses/busDetails')
-  //   console.log("🚀 ~ file: BusDetail.jsx:48 ~ getdata ~ result:", result.data)
-  //   setBusDetails(result.data)
-  // }
-  // useEffect(() => {
-  //   // getdata();
-  // }, [])
-
   return (
     <main>
-      <section className="border-top pt-4 mb-65">
+      <BusFilter />
+      <section className="mb-65">
         <div className="container">
-          <h2 className="title fw-bold mb-4">Delhi to Panipat</h2>
-          {/* {busDetails.map((item, i) => {
-            return (
-              <div className="box" key={i}>
-                <img src={images.busGif} alt="" />
-                <div className="outer-box">
-                  <ul className="box-inner">
-                    <li>
-                      <h6>Bus Number</h6>
-                      <p>{item.no}</p>
-                    </li>
-                    <li>
-                      <h6>Bus Name</h6>
-                      <p>{item.name}</p>
-                    </li>
-                    <li>
-                      <h6>Availability</h6>
-                      <p>{item.availability}</p>
-                    </li>
-                    <li>
-                      <h6>Time</h6>
-                      <p>{item.time} hrs</p>
-                    </li>
-                    <li>
-                      <h6>Date</h6>
-                      <p>{item.date}</p>
-                    </li>
-                    <li>
-                      <h6>Fare</h6>
-                      <p>₹{item.fare}</p>
-                    </li>
-                    <li>
-                      <h6>Nearest Stop</h6>
-                      <p>{item.stop}</p>
-                    </li>
-                  </ul>
-                  <div className="btns">
-                    <Link
-                      to="/BusViewDetail"
-                      className="btn btn-primary btn-custom"
-                    >
-                      View Detail
-                    </Link>
-                    <Link to="#" className="btn btn-primary btn-custom">
-                      Share GPS
-                    </Link>
-                    <Link
-                      to="/TrackYourBus"
-                      className="btn btn-primary btn-custom"
-                    >
-                      Track
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            );
-          })} */}
+          {/* <h2 className="title fw-bold mb-4">Delhi to Panipat</h2> */}
           <div className="row gy-4">
             {busDetails.map((item, i) => {
               return (
@@ -181,4 +113,4 @@ function BusDetail() {
   );
 }
 
-export default BusDetail;
+export default AllBuses;

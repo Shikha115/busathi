@@ -53,9 +53,9 @@ function Header() {
 
         <Navbar expand="lg">
           <div className="container">
-            <div className="navbar-brand p-0" to="/">
+            <Link className="navbar-brand p-0" to="/">
               <img src={images.logo} alt="" className="main-logo" />
-            </div>
+            </Link>
             <Navbar.Toggle aria-controls="offcanvasNavbar-expand-lg" />
             <Navbar.Offcanvas
               id="offcanvasNavbar-expand-lg"
@@ -72,16 +72,13 @@ function Header() {
                   <Link className="nav-link" to="/">
                     Home
                   </Link>
-                  <Link className="nav-link" to="/">
+                  <Link className="nav-link" to="/About">
                     About Us
                   </Link>
-                  <Link className="nav-link" to="/">
+                  <Link className="nav-link" to="/Safety-Feature">
                     Safety Features
                   </Link>
-                  <Link className="nav-link" to="/">
-                    About Us
-                  </Link>
-                  <Link className="nav-link" to="/">
+                  <Link className="nav-link" to="/Search-Bus">
                     Book
                   </Link>
                   <Link className="nav-link" to="/">

@@ -178,6 +178,17 @@ p {
   }
 }
 
+.swiper-button {
+  &-prev,
+  &-next {
+    --swiper-navigation-size: 25px;
+    font-weight: bold;
+    &:after {
+      color: $primary;
+    }
+  }
+}
+
 .img-cover {
   object-fit: cover;
 }

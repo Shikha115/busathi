@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 
 function BusTrack() {
   return (
-    <>
-      <Header />
       <main>
         <section className="track_bus mt-65">
           <div className="container">
@@ -86,7 +84,7 @@ function BusTrack() {
           </div>
         </section>
       </main>
-    </>
+ 
   );
 }
 

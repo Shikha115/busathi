@@ -6,8 +6,7 @@ function ForgetPasword() {
   const [email, setEmail] = useState("");
 
   return (
-    <>
-      <Header />
+   
       <main>
         <section className="login ptb-50">
           <div className="container">
@@ -46,7 +45,6 @@ function ForgetPasword() {
           </div>
         </section>
       </main>
-    </>
   );
 }
 

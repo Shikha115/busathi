@@ -4,8 +4,6 @@ import { images } from "../Images/images";
 
 function BusViewDetail() {
   return (
-    <>
-      <Header />
       <main>
         <section className="bus-view-detail mtb-65">
           <div className="container">
@@ -64,7 +62,7 @@ function BusViewDetail() {
           </div>
         </section>
       </main>
-    </>
+
   );
 }
 
