@@ -37,7 +37,7 @@ function SafetyFeature() {
       {/* ==================================================================================== */}
       <section className="safety-features mb-65">
         <div className="container">
-          <ul className="tabs mb-4">
+          <ul className="tabs-bth mb-4">
             {tabs.map((item, i) => {
               return (
                 <li

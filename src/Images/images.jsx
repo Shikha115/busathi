@@ -28,10 +28,11 @@ import dharamshala from "../assets/images/destination/dharamshala.jpg";
 import manali from "../assets/images/destination/manali.jpg";
 import parvati from "../assets/images/destination/parvati.jpg";
 import shimla from "../assets/images/destination/shimla.jpg";
+import logo_gif from "../assets/images/logo_gif.mp4";
 
 export const images = {
   logo,
-  bus_1,
+  bus_1,logo_gif,
   safetyAlarm,
   bus_2,
   bannerBg,

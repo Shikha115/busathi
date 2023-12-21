@@ -77,7 +77,7 @@ function BusDetail() {
     <main>
       <section className="border-top pt-4 mb-65">
         <div className="container">
-          <h2 className="title fw-bold mb-4">Delhi to Panipat</h2>
+          <h2 className="title fw-bold mb-4">Shimla to Manali</h2>
           {/* {busDetails.map((item, i) => {
             return (
               <div className="box" key={i}>

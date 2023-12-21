@@ -7,7 +7,7 @@ function ForgetPasword() {
 
   return (
    
-      <main>
+      <main className="border-top">
         <section className="login ptb-50">
           <div className="container">
             <div className="row">
