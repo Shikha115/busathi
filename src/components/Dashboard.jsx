@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Header from "./Header";
 import { images } from "../Images/images";
 import { Link } from "react-router-dom";
 import Modal from 'react-bootstrap/Modal';
+import withAuth from "../shared/Auth";
 
 function Dashboard() {
   const [showModal, setShowModal] = useState(false);
@@ -319,4 +319,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default withAuth(Dashboard,false);

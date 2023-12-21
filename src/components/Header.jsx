@@ -3,13 +3,12 @@ import { images } from "../Images/images";
 import { Link } from "react-router-dom";
 import { FaHeadphonesAlt } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 function Header() {
-  const [isLogin, setIsLogin] = useState(localStorage.getItem('token'))
+  const isLogin = localStorage.getItem('token')
   return (
     <header>
       <section className="header">
@@ -29,16 +28,10 @@ function Header() {
               </li>
               <li>
                 {isLogin ? (
-                  <Link
-                    to="/Login"
-                    onClick={() => {
-                      localStorage.setItem("isLogin", false);
-                      setIsLogin(false);
-                    }}
-                  >
+                  <a href="/Login" onClick={()=> localStorage.clear()}>
                     <FaUser />
                     Log Out
-                  </Link>
+                  </a>
                 ) : (
                   <Link to="/Login">
                     <FaUser />
