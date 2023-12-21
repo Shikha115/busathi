@@ -63,7 +63,7 @@ function Register() {
     try {
       const response = await axios.post('http://localhost:4000/users/register',data)
       localStorage.setItem("token", JSON.stringify(response.data));
-      toast.success('Registered', {
+      toast.success('you have Registered successfully', {
         autoClose: 3000,
         closeOnClick: true,
         onClose: () => { window.location.href = '/dashboard'; }
