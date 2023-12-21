@@ -292,10 +292,24 @@ ul.location-box {
   }
 }
 
-.best-destination {
+.favourite-route {
   img {
     height: 225px;
     margin-bottom: 10px;
+  }
+  .num {
+    color: #000;
+    font-style: italic;
+    background-color: $secondary;
+    width: max-content;
+    padding: 5px 1pc;
+    font-size: 14px;
+    line-height: normal;
+    border-radius: 5px;
+    font-weight: 600;
+    position: absolute;
+    top: 5px;
+    right: 5px;
   }
   a.content {
     h6 {
@@ -304,10 +318,10 @@ ul.location-box {
     p {
       color: #000;
       font-style: italic;
-      background-color: $primary;
+      background-color: lightgray;
       width: max-content;
       padding: 5px 10px;
-      font-size: 14px;
+      font-size: 12px;
       line-height: normal;
       border-radius: 5px;
       font-weight: 600;
@@ -317,10 +331,11 @@ ul.location-box {
 
 .bus-info {
   box-shadow: 0 0 15px 0 #00000020;
-  padding: 10px; transition: all .5s linear;
-  &:hover{
+  padding: 10px;
+  transition: all 0.5s linear;
+  &:hover {
     transform: scale(0.97);
-    transition: all .5s linear;
+    transition: all 0.5s linear;
   }
   img {
     height: 225px;
@@ -345,7 +360,7 @@ ul.location-box {
       color: #000;
       text-transform: capitalize;
     }
-    ul{
+    ul {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;

@@ -8,14 +8,14 @@ import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 function Header() {
-  const isLogin = localStorage.getItem('token')
+  const isLogin = localStorage.getItem("token");
   return (
     <header>
       <section className="header">
         {/* ========================================================================== */}
         <div className="bg-dark text-white top-header">
           <div className="container">
-            <marquee direction="left">
+            <marquee direction="left" className="flex-1">
               Busathi: Your trusty bus buddy ensuring safe and enjoyable
               travels!
             </marquee>
@@ -28,7 +28,7 @@ function Header() {
               </li>
               <li>
                 {isLogin ? (
-                  <a href="/Login" onClick={()=> localStorage.clear()}>
+                  <a href="/Login" onClick={() => localStorage.clear()}>
                     <FaUser />
                     Log Out
                   </a>

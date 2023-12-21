@@ -13,26 +13,31 @@ function Index() {
       img: images.dalhousie,
       route: "Chandigarh - Shimla",
       fair: 25,
+      no:765
     },
     {
       img: images.dharamshala,
       route: "Dharamshala- McLeodganj",
       fair: 25,
+      no:765
     },
     {
       img: images.shimla,
       route: "Manali - Mandi",
       fair: 25,
+      no:765
     },
     {
       img: images.manali,
       route: "Kalpa - Nako Lake",
       fair: 25,
+      no:765
     },
     {
       img: images.parvati,
       route: "Tabo - Kaza",
       fair: 25,
+      no:765
     },
   ]);
   const [testimonial, setTestimonial] = useState([
@@ -239,11 +244,15 @@ function Index() {
             {favouriteRoute.map((item, i) => {
               return (
                 <SwiperSlide key={i}>
-                  <div className="best-destination">
-                    <Link to="#" className="img">
+                  <div className="favourite-route">
+                    <div className="position-relative">
+                      <p className="num">{item.no}</p>
+                    <Link to="/BusViewDetail" className="img">
                       <img src={item.img} className="img-cover w-100" alt="" />
                     </Link>
-                    <Link to="#" className="content">
+                    
+                    </div>
+                    <Link to="/BusViewDetail" className="content">
                       <h6>{item.route}</h6>
                       <p>Fair ₹{item.fair}</p>
                     </Link>
