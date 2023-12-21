@@ -31,7 +31,7 @@ function Login() {
 
   return (
 
-    <main>
+    <main className="border-top">
       <section className="login ptb-50">
         <div className="container">
           <div className="title-section text-center mb-4">

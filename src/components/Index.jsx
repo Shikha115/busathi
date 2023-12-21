@@ -5,6 +5,7 @@ import Header from "./Header";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import BusFilter from "./BusFilter";
+import Testimonial from "./Testimonial";
 
 function Index() {
  
@@ -40,7 +41,7 @@ function Index() {
       no:765
     },
   ]);
-  const [testimonial, setTestimonial] = useState([
+  const [testimonialData, setTestimonialData] = useState([
     {
       name: "Pankaj",
       designaton: "Passenger",
@@ -332,37 +333,7 @@ function Index() {
       {/* ==================================================================================== */}
 
       {/* ==================================================================================== */}
-      <section className="testimonial mb-65">
-        <div className="container">
-          <div className="title mb-5 text-center">
-            <h1>Testimonials</h1>
-          </div>
-          <Swiper
-            modules={[Navigation, Autoplay]}
-            spaceBetween={0}
-            slidesPerView={3}
-            navigation
-            autoplay
-            speed={1500}
-            loop={true}
-          >
-            {testimonial.map((item, i) => {
-              return (
-                <SwiperSlide key={i}>
-                  <div className="home-testimonial">
-                    <h6>{item.name}</h6>
-                    <city>
-                      <small>{item.designaton}</small>
-                    </city>
-                    <p>{item.content}</p>
-                    <date>{item.date}</date>
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
-      </section>
+    <Testimonial data={testimonialData} />
 
       {/* <section className="container mb-65">
           <div className="google-download">

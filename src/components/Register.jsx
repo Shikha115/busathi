@@ -42,65 +42,83 @@ function Register() {
       } else {
         item.active = false;
       }
+      return item;
     });
+    setusers([...activeUser]);
   };
-  const onSubmit = async(e) => {
-    e.preventDefault()
+  const onSubmit = async (e) => {
+    e.preventDefault();
     let data;
     switch (currentUser) {
       case 1:
-        data = { name, email, phone, password,type:'general' }
+        data = { name, email, phone, password, type: "general" };
         break;
       case 2:
-        data = { name, position, email, phone, RTO, password,type:'RTO' }
+        data = { name, position, email, phone, RTO, password, type: "RTO" };
         break;
       case 3:
-        data = { name, email, phone, operator, position, licence, password,type:'manager' }
+        data = {
+          name,
+          email,
+          phone,
+          operator,
+          position,
+          licence,
+          password,
+          type: "manager",
+        };
         break;
       default:
         break;
     }
     try {
-      const response = await axios.post('https://bus-server-chi.vercel.app/users/register',data)
+      const response = await axios.post(
+        "https://bus-server-chi.vercel.app/users/register",
+        data
+      );
       localStorage.setItem("token", JSON.stringify(response.data));
-      toast.success('you have Registered successfully', {
+      toast.success("you have Registered successfully", {
         autoClose: 3000,
         closeOnClick: true,
-        onClose: () => { window.location.href = '/dashboard'; }
+        onClose: () => {
+          window.location.href = "/dashboard";
+        },
       });
     } catch (error) {
-      toast.error(error.response ? error.response.data.error : error.message)
+      toast.error(error.response ? error.response.data.error : error.message);
     }
-  }
+  };
 
   const handlePassword = () => {
     type === "password" ? settype("text") : settype("password");
   };
   return (
-
-    <main>
+    <main className="border-top">
       <section className="login ptb-50">
         <div className="container">
           <div className="title-section text-center mb-4">
             <h2 className="title fw-bold mb-0">Create Account</h2>
           </div>
-          <div className="btns my-4 d-flex align-items-center justify-content-center gap-4 flex-wrap">
+          <ul className="tabs-bth my-4 justify-content-center">
             {users.map((item, i) => {
               return (
-                <button
+                <li
                   key={i}
-                  className={`btn ${item.active ? "btn-primary" : "btn-secondary"
-                    } btn-custom`}
+                  className={item.active ? "active" : ""}
                   onClick={() => handleUser(item.tab, i)}
                 >
                   {item.name}
-                </button>
+                </li>
               );
             })}
-          </div>
+          </ul>
           <div className="row">
             <div className="col-12 col-md-10 col-lg-6 col-xxl-4 mx-auto">
-              <form action="/dashboard" className="row form" onSubmit={(e)=> onSubmit(e)}>
+              <form
+                action="/dashboard"
+                className="row form"
+                onSubmit={(e) => onSubmit(e)}
+              >
                 {currentUser === 1 ? (
                   <>
                     <div className="col-12 mb-4">
@@ -173,7 +191,13 @@ function Register() {
                     </div>
                     <div className="col-12 mb-4">
                       <label className="mb-0">Position</label>
-                      <input type="text" className="form-control" onChange={(e) => setPosition(e.target.value)} value={position} required />
+                      <input
+                        type="text"
+                        className="form-control"
+                        onChange={(e) => setPosition(e.target.value)}
+                        value={position}
+                        required
+                      />
                     </div>
                     <div className="col-12 mb-4">
                       <label className="mb-0">EMAIL</label>
@@ -199,7 +223,9 @@ function Register() {
                     <div className="col-12 mb-4">
                       <label className="mb-0">RTO License Number</label>
                       <input
-                        onChange={(e) => { setRTO(e.target.value) }}
+                        onChange={(e) => {
+                          setRTO(e.target.value);
+                        }}
                         type="number"
                         value={RTO}
                         className="form-control"
@@ -270,11 +296,23 @@ function Register() {
                     </div>
                     <div className="col-12 mb-4">
                       <label className="mb-0">Bus Operator Company</label>
-                      <input type="text" className="form-control" onChange={(e) => setOperator(e.target.value)} value={operator} required />
+                      <input
+                        type="text"
+                        className="form-control"
+                        onChange={(e) => setOperator(e.target.value)}
+                        value={operator}
+                        required
+                      />
                     </div>
                     <div className="col-12 mb-4">
                       <label className="mb-0">Position</label>
-                      <input type="text" className="form-control" onChange={(e) => setPosition(e.target.value)} value={position} required />
+                      <input
+                        type="text"
+                        className="form-control"
+                        onChange={(e) => setPosition(e.target.value)}
+                        value={position}
+                        required
+                      />
                     </div>
                     <div className="col-12 mb-4">
                       <label className="mb-0">
@@ -319,7 +357,8 @@ function Register() {
                 <div className="col-12 text-center pt-1">
                   <button
                     type="submit"
-                    className="btn btn-hover btn-custom btn-primary w-100">
+                    className="btn btn-hover btn-custom btn-primary w-100"
+                  >
                     CREATE
                   </button>
                   <div className="mt-3">

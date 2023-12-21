@@ -48,6 +48,14 @@ function Header() {
           <div className="container">
             <Link className="navbar-brand p-0" to="/">
               <img src={images.logo} alt="" className="main-logo" />
+              {/* <video
+                autoplay
+                loop
+                muted
+                className="video-logo"
+              >
+                 <source src={images.logo_gif} type="video/mp4" />
+              </video> */}
             </Link>
             <Navbar.Toggle aria-controls="offcanvasNavbar-expand-lg" />
             <Navbar.Offcanvas
@@ -74,9 +82,9 @@ function Header() {
                   <Link className="nav-link" to="/Search-Bus">
                     Book
                   </Link>
-                  <Link className="nav-link" to="/">
+                  {/* <Link className="nav-link" to="/">
                     Contact
-                  </Link>
+                  </Link> */}
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
