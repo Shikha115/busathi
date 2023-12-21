@@ -17,7 +17,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const data = await axios.post('http://localhost:4000/users/Login', { email, password })
+      const data = await axios.post('https://bus-server-chi.vercel.app/users/Login', { email, password })
       localStorage.setItem("token", JSON.stringify(data.data));
       toast('you are successfully logged In', {
         autoClose: 3000,
