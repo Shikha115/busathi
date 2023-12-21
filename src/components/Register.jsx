@@ -61,7 +61,7 @@ function Register() {
         break;
     }
     try {
-      const response = await axios.post('http://localhost:4000/users/register',data)
+      const response = await axios.post('https://bus-server-chi.vercel.app/users/register',data)
       localStorage.setItem("token", JSON.stringify(response.data));
       toast.success('you have Registered successfully', {
         autoClose: 3000,
