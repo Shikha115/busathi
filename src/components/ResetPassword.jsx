@@ -1,17 +1,19 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function ForgetPasword() {
   const [email, setEmail] = useState("");
+  console.log("🚀 ~ file: ResetPassword.jsx:8 ~ ForgetPasword ~ email:", email)
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const res = axios.post('https://bus-server-chi.vercel.app/sendpasswordlink', { Email: email })
-    if (res) {
-      setEmail('')
+    try {
+      const res = await axios.post('http://localhost:4000/sendpasswordlink', { Email: email })
+      console.log("🚀 ~ file: ResetPassword.jsx:13 ~ handleSubmit ~ res:", res)
       toast.success("Password reset link send succesfully to your Email")
-    } else {
-      toast.error('Invalid user')
+    } catch (error) {
+        toast.error('Invalid user')
     }
   }
   return (
@@ -23,7 +25,7 @@ function ForgetPasword() {
             <div className="col-12 col-md-10 col-lg-6 col-xxl-4 mx-auto">
               <div className="title-section text-center mb-4">
                 <h1 className="heading heading-decor mb-0">
-                  Reset your password
+                  Enter Email
                 </h1>
               </div>
               <form onSubmit={handleSubmit} className="row form">

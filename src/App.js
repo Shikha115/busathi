@@ -17,6 +17,7 @@ import EmergencyStop from "./components/EmergencyStop";
 import About from "./components/About";
 import SafetyFeature from "./components/SafetyFeature";
 import AllBuses from "./components/AllBuses";
+import ForgotPassword from "./components/ForgotPassword.jsx";
 
 function App() {
  
@@ -39,6 +40,7 @@ function App() {
           <Route path="/About" exact element={<About />} />
           <Route path="/Safety-Feature" exact element={<SafetyFeature />} />
           <Route path="/Search-Bus" exact element={<AllBuses />} />
+          <Route path="forgotpassword" element={<ForgotPassword />} />
         </Routes>
       <Footer />
       </BrowserRouter>
